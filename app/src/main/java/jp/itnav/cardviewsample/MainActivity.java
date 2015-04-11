@@ -19,13 +19,14 @@ public class MainActivity extends ActionBarActivity {
         LinearLayout cardLinear = (LinearLayout)this.findViewById(R.id.cardLinear);
         cardLinear.removeAllViews();
 
-        for(int i = 0; i< 15; i++) {
+        int cardSize = 15; // カードの枚数
+
+        for(int i = 0; i < cardSize; i++) {
             LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
             LinearLayout linearLayout = (LinearLayout) inflater.inflate(R.layout.card, null);
             CardView cardView = (CardView) linearLayout.findViewById(R.id.cardView);
             TextView textBox = (TextView) linearLayout.findViewById(R.id.textBox);
             textBox.setText("CardView " + i);
-
             cardView.setTag(i);
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
